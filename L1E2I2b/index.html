@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lista 1 - Exercício 2 - Item 1</title>
+		<meta charset="utf-8">
+		<script src="../js/math.min.js"></script>
+		<script src="../js/d3.min.js"></script>
+		<script src="../js/function-plot@1.14.0"></script>
+		<script src="../js/angular.min.js"></script>
+		<script src="sistema.js"></script>
+
+		<style>
+			.x {
+				width: 100px;
+			}
+			input {
+				padding: 6px;
+			}
+			body, html, input {
+				font-family: sans-serif;
+				font-size: 11pt;
+			}
+			form {
+				margin: 20px 0;
+			}
+			button {
+				padding: 6px;
+			}
+		</style>
+	</head>
+	<body  ng-app='myAppMath' ng-controller="MathController">
+		Matriz A
+		<br>
+		<table>
+			<tr ng-repeat="a1 in matriz.aa track by $index">
+				<td ng-repeat="a2 in a1 track by $index">
+					<input type="number" ng-model="a2" class="x" />
+				</td>
+				<td>.</td>
+				<td>X{{matriz.xa[$index]}}</td>
+				<td>= {{matriz.xra[$index] | number:5}}</td>
+				<td><input type="number" ng-model="matriz.ra[$index]" class="x" /></td>
+			</tr>
+		</table>
+		<br>
+		SA = {{matriz.xrFractiona}}
+		<hr>
+		Matriz B
+		<br>
+		<table>
+			<tr ng-repeat="a1 in matriz.ab track by $index">
+				<td ng-repeat="a2 in a1 track by $index">
+					<input type="number" ng-model="a2" class="x" />
+				</td>
+				<td>.</td>
+				<td>X{{matriz.xb[$index]}}</td>
+				<td>= {{matriz.xrb[$index] | number:5}}</td>
+				<td><input type="number" ng-model="matriz.rb[$index]" class="x" /></td>
+			</tr>
+		</table>
+		<br>
+		SB = {{matriz.xrFractionb}}
+		<hr>
+		<table cellpadding="5px" border="1">
+			<tr><th>SA </th><Th>SB</Th><th> SA - SB </th></tr>
+			<tr><td>{{matriz.xra[0]|number:5}} </td><Td>{{matriz.xrb[0]|number:5}}</Td><td> {{matriz.difAB[0]|number:5}} </td></tr>
+			<tr><td>{{matriz.xra[1]|number:5}} </td><Td>{{matriz.xrb[1]|number:5}}</Td><td> {{matriz.difAB[1]|number:5}} </td></tr>
+			<tr><td>{{matriz.xra[2]|number:5}} </td><Td>{{matriz.xrb[2]|number:5}}</Td><td> {{matriz.difAB[2]|number:5}} </td></tr>
+			<tr><td>{{matriz.xra[3]|number:5}} </td><Td>{{matriz.xrb[3]|number:5}}</Td><td> {{matriz.difAB[3]|number:5}} </td></tr>
+		</table>
+		
+	</body>
+</html>

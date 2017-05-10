@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lista 1 - Exercício 1 - Item 3 A E B</title>
+		<meta charset="utf-8">
+		<script src="../js/math.min.js"></script>
+		<script src="../js/d3.min.js"></script>
+		<script src="../js/function-plot@1.14.0"></script>
+		<script src="../js/angular.min.js"></script>
+		<script src="sistema.js"></script>
+
+		<style>
+			.x {
+				width: 50px;
+			}
+			input {
+				padding: 6px;
+			}
+			body, html, input {
+				font-family: sans-serif;
+				font-size: 11pt;
+			}
+			form {
+				margin: 20px 0;
+			}
+			button {
+				padding: 6px;
+			}
+		</style>
+	</head>
+	<body  ng-app='myAppMath' ng-controller="MathController">
+		<hr>
+		(a) Use a interpolação de Lagrange para aproximar a curva de peso médio de cada amostra.
+		<button ng-click="draw()">Gráfico</button>
+		<div id="plot"></div>
+		<hr>
+		(b) Aproxime o peso de cada amostra para o dia 2. Comente os valores obtidos. O que você  tem a
+dizer sobre a interpolação obtida para a amostra 1 para os dias iniciais?
+
+		<table>
+			<tr><td>Conferir Ponto X :</td><td><input type="text" size="5" ng-model="polinomio.conferir" /> <button ng-click="resultado()">OK</button> </td></tr>
+			<tr><Td>P1 </Td><td><input type="text" ng-model="polinomio.fx1"></td></tr>
+			<tr><Td>P2 </Td><td><input type="text" ng-model="polinomio.fx2"></td></tr>
+		</table> 
+		
+		
+		
+		<br>
+		<!--hr>
+		P1 = {{polinomio.polinomio1}}
+		<hr>
+		P2 = {{polinomio.polinomio2}}
+		<hr-->
+		<hr>
+		Os valores obtitos demostram que nestas amostragens realmente as folhas maduras do carvalho inibem o crescimento
+das larvas. Especificamente no dia 2 ambas amostragens demonstram queda brusca de peso, o polinômio da amostra número 2
+apresenta peso inferior ao peso inicial o que aparentemente não é real, já na amostra número 1 está claro o erro
+pois o peso sugerido seria negativo de -28,89. Analisando o gráfico também foi possível observar que este pico de queda 
+brusca no dia 2 foi impulsionado inversamente pelo valor obtido no dia 10, ou seja quanto maior o peso no dia 10 
+menor foi o valor do polinômio no dia 2. 
+		
+		
+
+	</body>
+</html>

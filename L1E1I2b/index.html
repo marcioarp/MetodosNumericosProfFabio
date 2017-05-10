@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lista 1 - Exercício 1 - Item 2 B</title>
+		<meta charset="utf-8">
+		<script src="../js/math.min.js"></script>
+		<script src="../js/d3.min.js"></script>
+		<script src="../js/function-plot@1.14.0"></script>
+		<script src="../js/angular.min.js"></script>
+		<script src="sistema.js"></script>
+
+		<style>
+			.x {
+				width: 50px;
+			}
+			input {
+				padding: 6px;
+			}
+			body, html, input {
+				font-family: sans-serif;
+				font-size: 11pt;
+			}
+			form {
+				margin: 20px 0;
+			}
+			button {
+				padding: 6px;
+			}
+		</style>
+	</head>
+	<body  ng-app='myAppMath' ng-controller="MathController">
+
+		Equação f(x): <input type="text" ng-model="polinomio.equacao" /> <button ng-click="calcular()">Calc</button><br>
+		x0: <input type="text" class="x" ng-model="polinomio.x0" /> &nbsp;
+		x1: <input type="text" class="x" ng-model="polinomio.x1" /> &nbsp;<Br>
+		
+		<!--table border="1" cellpadding="5px">
+			<tr>
+				<td>P= </td><td>y0L0</td><td> + </td><td>y1L1</td><td> + </td><td> y2L2</td>
+			</tr>
+			<tr>
+				<td>P= </td><td>{{polinomio.l0}}</td><td> + </td><td>{{polinomio.l1}}</td><td> + </td><td>{{polinomio.l2}}</td>
+			</tr>
+		</table-->
+		<hr>
+		P = {{polinomio.polinomio}}
+		<hr>
+		
+		<table>
+			<tr><td>Conferir Ponto X :</td><td><input type="text" size="5" ng-model="polinomio.conferir" /> <button ng-click="resultado()">OK</button> </td></tr>
+			<tr><Td>f(x) </Td><td><input type="text" ng-model="polinomio.f045"></td></tr>
+			<tr><Td>Polinômio </Td><td><input type="text" ng-model="polinomio.p045"></td></tr>
+		</table> 
+		
+		
+		
+		<br>
+		<hr>
+		<button ng-click="draw()">Gráfico</button>
+		<div id="plot"></div>
+
+	</body>
+</html>

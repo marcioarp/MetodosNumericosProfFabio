@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lista 1 - Exercício 2 - Item 1</title>
+		<meta charset="utf-8">
+		<script src="../js/math.min.js"></script>
+		<script src="../js/d3.min.js"></script>
+		<script src="../js/function-plot@1.14.0"></script>
+		<script src="../js/angular.min.js"></script>
+		<script src="sistema.js"></script>
+
+		<style>
+			.x {
+				width: 50px;
+			}
+			input {
+				padding: 6px;
+			}
+			body, html, input {
+				font-family: sans-serif;
+				font-size: 11pt;
+			}
+			form {
+				margin: 20px 0;
+			}
+			button {
+				padding: 6px;
+			}
+		</style>
+	</head>
+	<body  ng-app='myAppMath' ng-controller="MathController">
+		Matriz A
+		<br>
+		<table>
+			<tr ng-repeat="a1 in matriz.aa track by $index">
+				<td ng-repeat="a2 in a1 track by $index">
+					<input type="number" ng-model="a2" class="x" />
+				</td>
+				<td>.</td>
+				<td>X{{$index+1}}</td>
+				<td>= {{matriz.xra[$index] | number:5}}</td>
+				<td><input type="number" ng-model="matriz.ra[$index]" class="x" /></td>
+			</tr>
+		</table>
+
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lista 1 - Exercício 1 - Item 1</title>
+		<meta charset="utf-8">
+		<script src="../js/math.min.js"></script>
+		<script src="../js/d3.min.js"></script>
+		<script src="../js/function-plot2.js"></script>
+		<script src="../js/angular.min.js"></script>
+		<script src="sistema.js"></script>
+
+		<style>
+			.x {
+				width: 50px;
+			}
+			input {
+				padding: 6px;
+			}
+			body, html, input {
+				font-family: sans-serif;
+				font-size: 11pt;
+			}
+			form {
+				margin: 20px 0;
+			}
+			button {
+				padding: 6px;
+			}
+		</style>
+	</head>
+	<body  ng-app='myAppMath' ng-controller="MathController">
+		<img src="enunciado.png"><br>
+		Equação f(x): <input type="text" ng-model="integracao.equacao" /> <br>
+		<br>
+		<hr>
+		<button ng-click="integracao.calcular()">Calc</button>		
+		<hr>
+		<!--button ng-click="draw()">Gráfico</button-->
+		<div id="plot"></div>
+		<hr>
+
+		<a href="sistema.js" target="_blank">Script</a><br>
+
+	</body>
+</html>
